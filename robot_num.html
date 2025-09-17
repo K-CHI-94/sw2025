@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"/>
+    <link rel="stylesheet" href="/sw2025/style.css" />
+    
+    <title>경기SW미래채움AI페스티벌</title>
+  </head>
+  <body>
+     <!-- <div class="menu-wrap-mobile">
+        <a href="#event_overview">행사개요</a>
+        <a href="#main_program">프로그램</a>
+        <a href="#event">이벤트</a>
+        <a href="#notice">공지사항</a>
+        <a href="#directions">오시는길</a>
+     </div> -->
+         <!-- <img src="/sw2025/images/09_robot.png" alt="" class="program_more_img"> -->
+
+         <div class="code_num"></div>
+         
+<script>
+  const codeNum = document.querySelector('.code_num');
+
+  codeNum.addEventListener('click', function () {
+    if (this.classList.contains('on')) {
+      // 이미 code_on인 상태 → 페이지 이동
+      window.location.href = 'evolution.html'; // 원하는 URL로 변경하세요
+    } else {
+      // code_on이 아닌 상태 → 클래스 추가
+      this.classList.add('on');
+    }
+  });
+</script>
+    <script src="../sw2025/index.js"></script>
+  </body>
+</html>
