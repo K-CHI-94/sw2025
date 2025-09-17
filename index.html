@@ -1,37 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
-    <link rel="stylesheet" href="/sw2025/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"/>
+    <link rel="stylesheet" href="/sw2025/style.css" />
+    
     <title>경기SW미래채움AI페스티벌</title>
-</head>
-<body>
-    <header>
-        <div class="header_in">
-            <div><a href="#event_overview">행사개요</a></div>
-            <div><a href="#main_program">프로그램</a></div>
-            <div id="logo"><a href="#" onclick="return false"><img src="/sw2025/images/logo.svg" alt=""></a></div>
-            <div><a href="#event">이벤트</a></div>
-            <div><a href="#notice">공지사항</a></div>
-            <div><a href="#directions">오시는길</a></div>
-            </div>
+  </head>
+  <body>
+      <header>
+      <div class="header_in">
+        <div class="menu"><a href="#event_overview">행사개요</a></div>
+        <div class="menu"><a href="#main_program">프로그램</a></div>
+        <div id="logo">
+          <a href="#" onclick="return false">
+              <img src="/sw2025/images/logo.svg" alt=""/>
+          </a>
+        </div>
+        <div class="menu"><a href="#event">이벤트</a></div>
+        <div class="menu"><a href="#notice">공지사항</a></div>
+        <div class="menu"><a href="#directions">오시는길</a></div>
+        <!-- <div class="menu-wrap">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div> -->
+      </div>
     </header>
+     <div class="menu-wrap-mobile">
+        <a href="#event_overview">행사개요</a>
+        <a href="#main_program">프로그램</a>
+        <a href="#event">이벤트</a>
+        <a href="#notice">공지사항</a>
+        <a href="#directions">오시는길</a>
+     </div>
     <div class="wrap">
-    <div id="banner"><img src="/sw2025/images/Main_04.png" alt="경기SW미래채움"></div>
-    <div class="main_btn">
+      <div id="banner">
+        <img src="/sw2025/images/Main_04.png" alt="경기SW미래채움" />
+      </div>
+      <div class="main_btn">
         <a href="#" onClick="alert('사전예약이 종료되었습니다.')">사전예약</a>
         <a href="#" onClick="alert('사전예약이 종료되었습니다.')" class="center">예약확인</a>
         <a href="#">내로봇</a>
+      </div>
+      <div id="event_overview">
+        <img src="/sw2025/images/Main_06.png" alt="행사개요" />
+      </div>
+      <div id="main_program">
+        <img src="/sw2025/images/Main_06-05.png" alt="프로그램 소개" />
+      </div>
+      <div class="program_more">
+        <a href="/sw2025/program_more.html">프로그램 일정 더보기</a>
+      </div>
+      <div id="event">
+        <img src="/sw2025/images/Main_07.png" alt="이벤트" />
+      </div>
+      <div id="notice">
+        <img src="/sw2025/images/Main_08.png" alt="공지사항" />
+      </div>
+      <div id="directions">
+          <img src="/sw2025/images/Main_08-09.png" alt="오시는길" />
+        </div>
+        <div><img src="/sw2025/images/Main_08-10.png" alt="풋터" /></div>
     </div>
-    <div id="event_overview"><img src="/sw2025/images/Main_06.png" alt="행사개요"></div>
-    <div id="main_program"><img src="/sw2025/images/Main_06-05.png" alt="프로그램 소개"></div>
-    <div class="program_more"><a href="/sw2025/program_more.html">프로그램 일정 더보기</a></div>
-    <div id="event"><img src="/sw2025/images/Main_07.png" alt="이벤트"></div>
-    <div id="notice"><img src="/sw2025/images/Main_08.png" alt="공지사항"></div>
-    <div id="directions"><img src="/sw2025/images/Main_08-09.png" alt="오시는길"></div>
-    <div><img src="/sw2025/images/Main_08-10.png" alt="풋터"></div>
-    </div>
-</body>
+    
+    <script src="../sw2025/index.js"></script>
+  </body>
 </html>
