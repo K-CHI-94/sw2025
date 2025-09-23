@@ -17,11 +17,11 @@
             <header class="wrap">
                 <a href="./index.html" class="logo"><img src="./images/logo.png" alt="SW미래채움" /></a>
                 <nav>
-                    <a href="">행사개요</a>
-                    <a href="">프로그램</a>
-                    <a href="">이벤트</a>
-                    <a href="">공지사항</a>
-                    <a href="">오시는길</a>
+                    <a href="index.html#event_overlay">행사개요</a>               
+                    <a href="index.html#program">프로그램</a>
+                    <a href="index.html#event">이벤트</a>
+                    <!-- <a href="#notices">공지사항</a> -->
+                    <!-- <a href="">오시는길</a> -->
                 </nav>
             </header>
             <div class="banner wrap">
@@ -59,7 +59,7 @@
             </div>
         </section>
         <!-- event_overlay -->
-        <section class="event_overlay">
+        <section class="event_overlay" id="event_overlay">
             <div class="wrap">
                 <div class="main_title">
                     <img src="./images/eventoverlay_title_img.png" alt="" class="mt_img" />
@@ -88,7 +88,7 @@
         <!-- between_img -->
         <div class="between_img"><img src="./images/between_img.png" alt="" /></div>
         <!-- program -->
-        <section class="program">
+        <section class="program" id="program">
             <div class="wrap">
                 <div class="program_title">프로그램 소개</div>
                 <div class="program_zone">
@@ -102,6 +102,7 @@
                         </p>
                     </div>
                 </div>
+                <div class="table">
                 <table>
                     <tbody>
                         <tr>
@@ -133,7 +134,6 @@
                             <td>
                                 <h6>인원</h6>
                             </td>
-                        </tr>
                         </tr>
                         <tr>
                             <td rowspan="8">
@@ -218,49 +218,71 @@
                         </tr>
                     </tbody>
                 </table>
+                </div>
                 <div class="btn_box">
-                    <a href="" class="btn_basic btn_program_more">프로그램 더보기</a>
+                    <a href="program.html" class="btn_basic btn_program_more">프로그램 더보기</a>
                 </div>
             </div>
         </section>
         <!-- event -->
-        <section class="event">
+        <section class="event" id="event">
             <div class="wrap">
-                <div class="main_title">
-                    <img src="./images/event_title_img.png" alt="" class="mt_img" />
-                    <div class="mt_text">이벤트</div>
+                <div class="event_robot">
+                    <div class="main_title">
+                        <img src="./images/event_title_img.png" alt="" class="mt_img" />
+                        <div class="mt_text">이벤트</div>
+                    </div>
+                    <div class="event_box">
+                        <div class="event_title">이벤트 01</div>
+                        <div class="event_text">프로그램 이벤트 <span class="evi_point">AI 로봇 진화 챌린지</span></div>
+                        <img src="./images/Robot.png" alt="" class="robot">
+                        <div class="robot_step_box">
+                            <div class="robot_step">
+                                <div class="robot_step_in"><span class="step">STEP1</span>
+                                    <div>2025 경기SW미래채움 AI페스티벌의 다양한 프로그램에 참여한다.</div>
+                                </div>
+                            </div>
+                            <div class="robot_step">
+                                <div class="robot_step_in"><span class="step">STEP2</span>
+                                    <div>참여한 프로그램 종료 후 체험 확인 코드를 받는다.<div class="small">· 체험확인은 각 프로그램 종료 후 프로그램별 담당자에게 6자리 코드를 받아 입력합니다.</div>
+                                        <div class="small">· 체험번호 입력시 다음 단계로 진화합니다.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="robot_step">
+                                <div class="robot_step_in"><span class="step">STEP3</span>
+                                    <div>5개의 프로그램 참여하면 나만의 로봇 완성!</div>
+                                </div>
+                            </div>
+                            <div class="robot_step">
+                                <div class="robot_step_in"><span class="step">STEP4</span>
+                                    <div>참여한 프로그램 나만의 로봇 키링을 수령한다. <div class="small">· 로봇 키링은 로봇ZONE에서 수령 가능합니다.</div>
+                                        <div class="small">· 로봇키링은 1인 1개만 가능합니다.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="event_box">
-                    <div class="event_title">이벤트 01</div>
-                    <div class="event_text">프로그램 이벤트 <span class="evi_point">AI 로봇 진화 챌린지</span></div>
-                    <img src="./images/Robot.png" alt="" class="robot">
-                    <div class="robot_step_box">
-                        <div class="robot_step">
-                            <div class="robot_step_in"><span class="step">STEP1</span>
-                                <div>2025 경기SW미래채움 AI페스티벌의 다양한 프로그램에 참여한다.</div>
+                <div class="event_robot">
+                    <div class="event_box">
+                        <div class="event_title">이벤트 02</div>
+                        <div class="event_text">SNS <span class="evi_point">후기 or</span> 만족도 조사<span class="evi_point"> 이벤트</span></div>
+                        <div class="event_step">
+                            <div class="es_step">
+                                <img src="./images/event_ic_step.png" alt="" class="es_step_img">
+                                <div class="es_title">STEP1</div>
+                                <div class="es_text">경기SW미래채움 AI 페스티벌에서<br>다양한 체험 하고 <span class="fwb">로봇을 진화</span>해보세요!</div>
                             </div>
-                        </div>
-                        <div class="robot_step">
-                            <div class="robot_step_in"><span class="step">STEP2</span>
-                                <div>참여한 프로그램 종료 후 체험 확인 코드를 받는다.<div class="small">· 체험확인은 각 프로그램 종료 후 프로그램별 담당자에게 6자리 코드를 받아 입력합니다.</div>
-                                    <div class="small">· 체험번호 입력시 다음 단계로 진화합니다.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="robot_step">
-                            <div class="robot_step_in"><span class="step">STEP3</span>
-                                <div>5개의 프로그램 참여하면 나만의 로봇 완성!</div>
-                            </div>
-                        </div>
-                        <div class="robot_step">
-                            <div class="robot_step_in"><span class="step">STEP4</span>
-                                <div>참여한 프로그램 나만의 로봇 키링을 수령한다. <div class="small">· 로봇 키링은 로봇ZONE에서 수령 가능합니다.</div>
-                                    <div class="small">· 로봇키링은 1인 1개만 가능합니다.</div>
-                                </div>
+                            <i class="fi fi-sr-arrow-alt-circle-right es_icon"></i>
+                             <div class="es_step">
+                                <div class="es_step_img step2"><img src="./images/md2_none.png" alt=""></div>
+                                <div class="es_title">STEP2</div>
+                                <div class="es_text">5단계까지 최종진화를 성공한<br><span class="fwb">선착순 100분</span> 에게 <span class="fwb">로봇 키링</span>을 드립니다.</div>
                             </div>
                         </div>
                     </div>
                 </div>
         </section>
     </body>
-</html>
+</html> 
