@@ -251,6 +251,7 @@ table tr.title:nth-child(even){background-color:#91F9D2;}
 
     .robot{margin:0 0 20px 0}
 
-    br{display:none;}
+    .evi_text2 br {display:none;}
+
 
 }
