@@ -190,7 +190,7 @@ table tr.title:nth-child(even){background-color:#91F9D2;}
 
 
 @media (max-width:1024px){
-    .wrap{max-width:900px}
+    .wrap{max-width:calc(100% - 50px)}
     .event_overlay{max-height:fit-content;}
     .event_overlay_in{flex-direction:column;height:auto;}
     .evi_img{width:50%;margin:0 auto 20px;border-radius:20px;}
@@ -204,9 +204,12 @@ table tr.title:nth-child(even){background-color:#91F9D2;}
     .banner_content{max-width:none;}
     .banner_img{opacity:70%;}
     .btn_banner{width:100%;}
+    .event_step{flex-direction:column;}
+     .es_step{width:100%;margin:0 0 20px 0}
+    .es_icon{display:none;}
 }
 
-@media (max-width:425px){
+@media (max-width:700px){
     .robot_step .small{font-size:1.4rem;}
     .evi_text2{font-size:1.6rem}
     .btn_banner>a,.pz_sub,.robot_step{font-size:1.8rem;}
@@ -240,7 +243,6 @@ table tr.title:nth-child(even){background-color:#91F9D2;}
     .event_title{min-width:80%;}
 
     .es_step{width:100%;margin:0 0 20px 0}
-    
     .es_icon{display:none;}
 
     .event_step{margin:0 auto}
