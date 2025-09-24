@@ -1,18 +1,181 @@
-// 페이지 로드 후 화면 높이 출력
-window.addEventListener("load", function () {
-  // 화면의 현재 높이 확인
-  var currentHeight = window.innerHeight;
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("robotNameInput");
+  const confirmBtn = document.getElementById("confirmBtn");
+  const robotNameInputBox = document.querySelector(".robot_name_input");
+  const myRobotNameBox = document.querySelector(".my_robot_name");
+  const robotNameDisplay = document.getElementById("robotNameDisplay");
+  const resetBtn = document.getElementById("resetBtn");
+  const robotStepImg = document.querySelector(".robot_step"); // 로봇 단계 이미지
 
-  // 화면 높이를 표시할 요소 찾기
-  var heightDisplay = document.getElementById("height-display");
+  // 저장된 이름 불러오기
+  const savedName = localStorage.getItem("robotName");
+  if (savedName) {
+    robotNameDisplay.textContent = savedName;
+    robotNameInputBox.style.display = "none";
+    myRobotNameBox.style.display = "flex";
+    robotStepImg.src = "./images/robot_lv1.png"; // 저장된 이름이 있으면 lv1 이미지 표시
+  }
 
-  // 화면 높이 출력
-  heightDisplay.textContent = "현재 화면 높이: " + currentHeight + "px";
+  // 확인 버튼 클릭 시
+  confirmBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const name = input.value.trim();
+
+    if (name === "") {
+      alert("이름을 입력해주세요!");
+      return;
+    }
+
+    // 이름 저장
+    localStorage.setItem("robotName", name);
+
+    // 이름 반영
+    robotNameDisplay.textContent = name;
+
+    // 입력창 숨기고 결과 보여주기
+    robotNameInputBox.style.display = "none";
+    myRobotNameBox.style.display = "flex";
+
+    // 이미지 교체
+    robotStepImg.src = "./images/robot_lv1.png";
+  });
+
+  // Enter 키 입력 시도 동일하게 처리
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      confirmBtn.click();
+    }
+  });
+
+  // 리셋 버튼 클릭 시
+  resetBtn.addEventListener("click", () => {
+    localStorage.removeItem("robotName"); // 저장된 이름 삭제
+    robotNameDisplay.textContent = "test"; // 기본값으로 되돌리기
+    input.value = ""; // 입력창 초기화
+    myRobotNameBox.style.display = "none";
+    robotNameInputBox.style.display = "flex";
+
+    // 이미지 원래대로 돌리기
+    robotStepImg.src = "./images/robot_step.png";
+  });
 });
 
-// 화면 크기 변경 시에도 화면 높이 업데이트
-window.addEventListener("resize", function () {
-  var currentHeight = window.innerHeight;
-  var heightDisplay = document.getElementById("height-display");
-  heightDisplay.textContent = "현재 화면 높이: " + currentHeight + "px";
+document.addEventListener("DOMContentLoaded", () => {
+  const inputs = document.querySelectorAll(".code_input");
+  const btnBox = document.querySelector(".btn_box .btn_grye"); // 버튼 선택
+
+  inputs.forEach((input, index) => {
+    input.addEventListener("input", () => {
+      if (input.value.length === 1) {
+        if (index < inputs.length - 1) {
+          inputs[index + 1].focus(); // 다음 input으로 포커스 이동
+        } else {
+          input.blur(); // 마지막 입력칸에서는 포커스 해제
+
+          // ✅ 마지막 input이 채워졌을 때 버튼 색상 변경
+          if (btnBox) {
+            btnBox.classList.remove("btn_grye");
+            btnBox.classList.add("btn_basic");
+          }
+        }
+      }
+    });
+
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Backspace" && input.value === "" && index > 0) {
+        inputs[index - 1].focus(); // 백스페이스 시 이전 input으로 이동
+      }
+    });
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("robotNameInput");
+  const confirmBtn = document.getElementById("confirmBtn");
+  const robotNameInputBox = document.querySelector(".robot_name_input");
+  const myRobotNameBox = document.querySelector(".my_robot_name");
+  const robotNameDisplay = document.getElementById("robotNameDisplay");
+  const resetBtn = document.getElementById("resetBtn");
+  const robotStepImg = document.querySelector(".robot_step");
+
+  const savedName = localStorage.getItem("robotName");
+  if (savedName) {
+    robotNameDisplay.textContent = savedName;
+    robotNameInputBox.style.display = "none";
+    myRobotNameBox.style.display = "flex";
+    robotStepImg.src = "./images/robot_lv1.png";
+  }
+
+  confirmBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const name = input.value.trim();
+
+    if (name === "") {
+      alert("이름을 입력해주세요!");
+      return;
+    }
+
+    localStorage.setItem("robotName", name);
+    robotNameDisplay.textContent = name;
+    robotNameInputBox.style.display = "none";
+    myRobotNameBox.style.display = "flex";
+    robotStepImg.src = "./images/robot_lv1.png";
+  });
+
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      confirmBtn.click();
+    }
+  });
+
+  resetBtn.addEventListener("click", () => {
+    localStorage.removeItem("robotName");
+    robotNameDisplay.textContent = "test";
+    input.value = "";
+    myRobotNameBox.style.display = "none";
+    robotNameInputBox.style.display = "flex";
+    robotStepImg.src = "./images/robot_step.png";
+  });
+
+  const inputs = document.querySelectorAll(".code_input");
+  const confirmButton = document.querySelector(".btn_box .btn_grye");
+
+  inputs.forEach((input, index) => {
+    input.addEventListener("input", () => {
+      if (input.value.length === 1 && index < inputs.length - 1) {
+        inputs[index + 1].focus();
+      }
+      checkAllInputs();
+    });
+
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Backspace" && input.value === "" && index > 0) {
+        inputs[index - 1].focus();
+      }
+    });
+  });
+
+  function checkAllInputs() {
+    const isAllFilled = Array.from(inputs).every((input) => input.value.length === 1);
+    if (isAllFilled) {
+      confirmButton.classList.remove("btn_grye");
+      confirmButton.classList.add("btn_basic");
+      confirmButton.style.pointerEvents = "auto";
+    } else {
+      confirmButton.classList.remove("btn_basic");
+      confirmButton.classList.add("btn_grye");
+      confirmButton.style.pointerEvents = "none";
+    }
+  }
+
+  confirmButton.addEventListener("click", (e) => {
+    if (confirmButton.classList.contains("btn_basic")) {
+      window.location.href = "robot.html";
+    } else {
+      e.preventDefault(); // btn_grye 상태일 때 링크 이동 방지
+    }
+  }); // 페이지 로드 시 초기 상태 설정
+
+  checkAllInputs();
 });
